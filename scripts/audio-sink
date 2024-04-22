@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sink="$(pacmd list-sinks | grep "active port" | awk '{print $3}')"
+
+if [ $sink == "<analog-output-headphones>" ]; then
+    echo -n '󰋋'
+else
+    echo -n '󰓃'
+fi
