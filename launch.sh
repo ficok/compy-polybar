@@ -1,6 +1,15 @@
-#!/bin/zsh
+#!/bin/bash
+
+compyFile=~/.COMPY
+simplishaFile=~/.SIMPLISHA
+
+test -e $simplishaFile
+if [ $? -eq 0 ]; then
+    mv $compyFile $simplishaFile
+fi
 
 DIR="$HOME/.config/polybar/compy"
+export POLYBAR="compy"
 
 pkill polybar
 
